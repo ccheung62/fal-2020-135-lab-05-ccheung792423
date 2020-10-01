@@ -67,6 +67,11 @@ TEST_CASE("Task D: Starting and ending with prime numbers"){
   CHECK(countPrimes(23,29)==2);
   CHECK(countPrimes(53,61)==3);
 }
+TEST_CASE ("Task D: Upper bound is less than lower bound"){
+  CHECK(countPrimes(13,3)==5);
+  CHECK(countPrimes(29,23)==2);
+  CHECK(countPrimes(61,53)==3);
+}
 
 //Task E
 TEST_CASE("Task E: Regular cases"){
@@ -122,6 +127,11 @@ TEST_CASE("Task G: No twin prime in range"){
   CHECK(largestTwinPrime(2,2)==0);
   CHECK(largestTwinPrime(-100,-80)==0);
   CHECK(largestTwinPrime(20,28)==0);
+}
+TEST_CASE("Task G: Upper bound is less than lower bound"){
+  CHECK(largestTwinPrime(18,2)==17);
+  CHECK(largestTwinPrime(30,21)==29);
+  CHECK(largestTwinPrime(50,41)==43);
 }
 TEST_CASE("Task G: Lower bound is the only twin prime"){
   CHECK(largestTwinPrime(43,55)==43);
