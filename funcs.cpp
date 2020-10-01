@@ -55,9 +55,9 @@ int countPrimes(int a, int b){
 
 //Task E
 bool isTwinPrime(int n){
-  if(isPrime(n)){
-    if (isPrime(n-2)){ 
-      return true;
+  if(isPrime(n)){ //if n is not a prime number, it is not a twin prime
+    if (isPrime(n-2)){ //check ±2 for prime
+      return true; 
     }
     else if(isPrime(n+2)){
       return true;
@@ -68,23 +68,7 @@ bool isTwinPrime(int n){
 
 //Task F
 int nextTwinPrime(int n){
-  /*
-  if (isTwinPrime(n+1)){  //if the previous number is prime then the next number is a twin prime
-    return n+1;
-  }
-  else if((nextPrime(n)-2)<=n){ //if the next prime number is 2 number or lessaway from n, then the next twin number is the next prime number +2
-    if (isPrime(nextPrime(n)+2)){
-      return nextPrime(n);
-    }
-    else{
-      return nextPrime(n)+2;
-    }
-  }
-  else {
-    return nextPrime(n)-2; //the closest twin prime is the next prime number minus 2
-  }
-  */
-  for (int i=n+1;1==1;i++){
+  for (int i=n+1;1==1;i++){ //return i when the next twin prime is reached
     if(isTwinPrime(i)){
       return i;
     }
@@ -93,10 +77,9 @@ int nextTwinPrime(int n){
 
 //Task G
 int largestTwinPrime(int a, int b){
-  int i;
   int num;
-  for(i=a;nextTwinPrime(i)<=b; i++){
-    num = nextTwinPrime(i);
+  for(int i=a;nextTwinPrime(i)<=b; i++){
+    num = nextTwinPrime(i); //save the largest twin prime within the bound
   }
   if (nextTwinPrime(a)>b){ //no twin prime in range(not counting lower bound)
     if (isTwinPrime(a)){
