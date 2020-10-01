@@ -55,15 +55,15 @@ int countPrimes(int a, int b){
 
 //Task E
 bool isTwinPrime(int n){
-  if (isPrime(n-2)){ 
-    return true;
+  if(isPrime(n)){
+    if (isPrime(n-2)){ 
+      return true;
+    }
+    else if(isPrime(n+2)){
+      return true;
+    }
   }
-  else if(isPrime(n+2)){
-    return true;
-  }
-  else{
-    return false;
-  }
+  return false;
 }
 
 //Task F
@@ -84,10 +84,7 @@ int nextTwinPrime(int n){
     return nextPrime(n)-2; //the closest twin prime is the next prime number minus 2
   }
   */
-  bool notTwin = true;
-  int i;
-  int num;
-  for (i=n+1;1==1;i++){
+  for (int i=n+1;1==1;i++){
     if(isTwinPrime(i)){
       return i;
     }

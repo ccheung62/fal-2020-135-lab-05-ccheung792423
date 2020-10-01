@@ -70,10 +70,10 @@ TEST_CASE("Task D: Starting and ending with prime numbers"){
 
 //Task E
 TEST_CASE("Task E: Regular cases"){
-  CHECK(isTwinPrime(25)==true);
-  CHECK(isTwinPrime(45)==true);
-  CHECK(isTwinPrime(27)==true);
-  CHECK(isTwinPrime(64)==false);
+  CHECK(isTwinPrime(15)==false);
+  CHECK(isTwinPrime(43)==true);
+  CHECK(isTwinPrime(56)==false);
+  CHECK(isTwinPrime(71)==true);
 }
 TEST_CASE("Task E: Negative numbers"){
   CHECK(isTwinPrime(-27)==false);
@@ -81,48 +81,56 @@ TEST_CASE("Task E: Negative numbers"){
   CHECK(isTwinPrime(-10)==false);
 }
 TEST_CASE("Task E: Zero"){
-  CHECK(isTwinPrime(0)==true);
+  CHECK(isTwinPrime(0)==false);
+}
+TEST_CASE("Task E: Input is not a prime but ±2 is"){
+  CHECK(isTwinPrime(25)==false);
+  CHECK(isTwinPrime(45)==false);
+  CHECK(isTwinPrime(27)==false);
+  CHECK(isTwinPrime(64)==false);
+}
+TEST_CASE("Task E: Input is the in between the twin prime number"){
+  CHECK(isTwinPrime(42)==false);
+  CHECK(isTwinPrime(12)==false);
+  CHECK(isTwinPrime(30)==false);
 }
 
 //Task F
 TEST_CASE("Task F: Regular cases"){
   CHECK(nextTwinPrime(9)==11);
-  CHECK(nextTwinPrime(8)==9);
-  CHECK(nextTwinPrime(76)==77);
+  CHECK(nextTwinPrime(8)==11);
+  CHECK(nextTwinPrime(41)==43);
 }
-TEST_CASE("Task F: Input is a twin prime"){
-  CHECK(nextTwinPrime(43)==45);
-  CHECK(nextTwinPrime(39)==41);
-  CHECK(nextTwinPrime(71)==73);
+TEST_CASE("Task F: Input is the second twin prime"){
+  CHECK(nextTwinPrime(43)==59);
+  CHECK(nextTwinPrime(13)==17);
+  CHECK(nextTwinPrime(31)==41);
 }
-TEST_CASE("Task F: The previous number is a prime number"){
-  CHECK(nextTwinPrime(60)==61);
+TEST_CASE("Task F: Input is the number in between the prime number"){
   CHECK(nextTwinPrime(12)==13);
-  CHECK(nextTwinPrime(74)==75);
-}
-TEST_CASE("Task F: Two prime number are one number apart"){
-  CHECK(nextTwinPrime(28)==29);
+  CHECK(nextTwinPrime(18)==19);
+  CHECK(nextTwinPrime(42)==43);
 }
 
 //Task G
 TEST_CASE("Task G: Regular cases"){
   CHECK(largestTwinPrime(2,18)==17);
   CHECK(largestTwinPrime(21,30)==29);
-  CHECK(largestTwinPrime(41,50)==49);
+  CHECK(largestTwinPrime(41,50)==43);
 }
 TEST_CASE("Task G: No twin prime in range"){
   CHECK(largestTwinPrime(2,2)==0);
   CHECK(largestTwinPrime(-100,-80)==0);
-  CHECK(largestTwinPrime(92,94)==0);
+  CHECK(largestTwinPrime(20,28)==0);
 }
 TEST_CASE("Task G: Lower bound is the only twin prime"){
-  CHECK(largestTwinPrime(25,26)==25);
-  CHECK(largestTwinPrime(55,56)==55);
-  CHECK(largestTwinPrime(91,94)==91);
+  CHECK(largestTwinPrime(43,55)==43);
+  CHECK(largestTwinPrime(13,16)==13);
+  CHECK(largestTwinPrime(73,100)==73);
 }
 TEST_CASE("Task G: Upper bound is the largest twin prime"){
-  CHECK(largestTwinPrime(80,95)==95);
-  CHECK(largestTwinPrime(22,57)==57);
-  CHECK(largestTwinPrime(-100,49)==49);
+  CHECK(largestTwinPrime(2,13)==13);
+  CHECK(largestTwinPrime(27,31)==31);
+  CHECK(largestTwinPrime(-100,19)==19);
 }
 
