@@ -5,7 +5,7 @@
 
 int main()
 {
-  std::srand(std::time(0));
+  std::srand(time(0));
   int a,b;
   
   //Task A
