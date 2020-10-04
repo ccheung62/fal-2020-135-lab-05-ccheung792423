@@ -42,10 +42,8 @@ int nextPrime(int n){
 //Task D
 int countPrimes(int a, int b){
   int count=0;
-  if (a>b){
-    int temp = a;
-    a = b;
-    b = temp;
+  if (b<a){
+    return count;
   }
   int num = a;
   if (isPrime(a)){ //if the starting bound is prime then count +1
@@ -83,11 +81,6 @@ int nextTwinPrime(int n){
 //Task G
 int largestTwinPrime(int a, int b){
   int num;
-  if (a > b){
-    int temp = a;
-    a = b;
-    b = temp;
-  }
   for(int i=a;nextTwinPrime(i)<=b; i++){
     num = nextTwinPrime(i); //save the largest twin prime within the bound
   }
