@@ -124,9 +124,9 @@ TEST_CASE("Task G: Regular cases"){
   CHECK(largestTwinPrime(41,50)==43);
 }
 TEST_CASE("Task G: No twin prime in range"){
-  CHECK(largestTwinPrime(2,2)==0);
-  CHECK(largestTwinPrime(-100,-80)==0);
-  CHECK(largestTwinPrime(20,28)==0);
+  CHECK(largestTwinPrime(2,2)==-1);
+  CHECK(largestTwinPrime(-100,-80)==-1);
+  CHECK(largestTwinPrime(20,28)==-1);
 }
 TEST_CASE("Task G: Upper bound is less than lower bound"){
   CHECK(largestTwinPrime(18,2)==17);
