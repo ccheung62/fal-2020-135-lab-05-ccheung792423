@@ -95,7 +95,7 @@ int largestTwinPrime(int a, int b){
     if (isTwinPrime(a)){
       return a; //if lower bound is the only twin prime, return a
     }
-    return 0; 
+    return -1; 
   }
   return num;
 }
